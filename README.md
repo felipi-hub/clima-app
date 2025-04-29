@@ -1,3 +1,4 @@
+
 # ClimaApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
@@ -25,3 +26,29 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+# Clima App
+
+Este é um aplicativo de previsão do tempo que permite consultar as condições climáticas de qualquer cidade do mundo. Ele exibe informações como:
+
+- Temperatura atual
+- Umidade
+- Velocidade do vento
+- Sensação térmica
+- Descrição do clima
+- Ícone representando as condições climáticas
+- Imagem de fundo que muda conforme as condições climáticas
+
+## Tecnologias Usadas
+
+- Angular 17
+- OpenWeatherMap API
+
+## Como usar
+
+1. Clone este repositório.
+2. Instale as dependências com o comando:
+   ```bash
+   npm install
+
+
