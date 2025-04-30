@@ -47,7 +47,8 @@ Este é um aplicativo de previsão do tempo que permite consultar as condições
 ## Como usar
 
 1. Clone este repositório.
-2. Instale as dependências com o comando:
+2. ```bash https://github.com/felipi-hub/clima-app.git
+3. Instale as dependências com o comando:
    ```bash
    npm install
 
