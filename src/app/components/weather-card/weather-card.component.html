@@ -1,16 +1,18 @@
 <div class="weather-card" [ngStyle]="{'background-image': backgroundImage}">
     <div class="card-content">
+        <h1>🌤️ ClimaApp - Previsão do Tempo</h1>
         <input [(ngModel)]="city" placeholder="Digite a cidade" />
         <button (click)="searchWeather()">Buscar</button>
 
-        <div *ngIf="weatherData" class="result">
+        <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+
+        <div *ngIf="weatherData && showResult" class="result show">
             <h2>{{ weatherData.name }}</h2>
             <p>{{ weatherData.weather[0].description }}</p>
             <p>🌡️ Temperatura: {{ weatherData.main.temp }}°C</p>
             <p>🤒 Sensação térmica: {{ weatherData.main.feels_like }}°C</p>
             <p>💧 Umidade: {{ weatherData.main.humidity }}%</p>
             <p>💨 Vento: {{ weatherData.wind.speed }} km/h</p>
-
             <img [src]="'https://openweathermap.org/img/wn/' + weatherData.weather[0].icon + '@2x.png'"
                 alt="Ícone do clima" />
         </div>

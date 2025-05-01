@@ -1,65 +1,99 @@
 .weather-card {
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #fff;
+    color: black;
     text-align: center;
+    box-sizing: border-box;
+    transition: background-image 0.8s ease-in-out;
 
     .card-content {
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(255, 255, 255, 0.15);
+        /* fundo translúcido */
+        backdrop-filter: blur(10px);
+        /* desfoque o fundo atrás */
+        -webkit-backdrop-filter: blur(10px);
+        /* compatibilidade Safari */
+
         padding: 2rem;
         border-radius: 12px;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-        max-width: 400px;
+        max-width: 450px;
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        /* contorno sutil */
+        /* Espaço entre os elementos */
 
+        /* Estilos do Input */
         input {
             width: 100%;
-            padding: 0.75rem;
+            padding: 0.8rem 1.2rem;
             font-size: 1rem;
-            border: none;
+            border: 1px solid #00aaff;
             border-radius: 8px;
-            margin-bottom: 1rem;
-            outline: none;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+
+            &:focus {
+                outline: none;
+                border-color: #0077cc;
+                /* Destaque quando o input estiver focado */
+                background-color: rgba(255, 255, 255, 1);
+            }
+
+            ::placeholder {
+                color: #aaa;
+            }
         }
 
+        /* Estilos do Botão */
         button {
             width: 100%;
-            padding: 0.75rem;
+            padding: 0.8rem;
             font-size: 1rem;
             background-color: #00aaff;
             color: white;
-            border: none;
+            border: 1px solid #00aaff;
             border-radius: 8px;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 1rem;
+            /* Adiciona espaçamento entre input e botão */
 
             &:hover {
                 background-color: #0077cc;
-                transform: scale(1.03);
+                transform: scale(1.05);
             }
 
             &:active {
-                transform: scale(0.97);
+                transform: scale(0.98);
             }
         }
 
+        /* Estilos da seção de resultados */
         .result {
             margin-top: 1.5rem;
+            color: #fff;
 
             h2 {
-                margin-bottom: 0.5rem;
-                font-size: 1.5rem;
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
             }
 
             p {
-                margin: 0.4rem 0;
-                font-size: 1.1rem;
+                font-size: 1.2rem;
+                margin: 0.5rem 0;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -67,40 +101,41 @@
             }
 
             img {
-                margin-top: 0.5rem;
+                margin-top: 1rem;
+                max-width: 100px;
+                height: auto;
             }
         }
     }
 }
 
+/* Estilos para dispositivos móveis */
 @media (max-width: 600px) {
     .weather-card {
         padding: 1rem;
 
         .card-content {
-            padding: 1.5rem;
-            max-width: 100%;
-            border-radius: 8px;
+            padding: 1.25rem;
+        }
 
-            input,
-            button {
-                font-size: 0.95rem;
-                padding: 0.6rem;
+        input,
+        button {
+            padding: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .result {
+            h2 {
+                font-size: 1.4rem;
             }
 
-            .result {
-                h2 {
-                    font-size: 1.3rem;
-                }
+            p {
+                font-size: 1rem;
+            }
 
-                p {
-                    font-size: 1rem;
-                }
-
-                img {
-                    width: 80px;
-                    height: 80px;
-                }
+            img {
+                width: 80px;
+                height: 80px;
             }
         }
     }
